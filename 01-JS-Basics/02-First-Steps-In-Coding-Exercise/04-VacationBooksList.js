@@ -4,7 +4,6 @@ function calculateHoursPerDay(input) {
     let days = input[2] * 1;
     let hours_per_day = (number_of_pages / pages_per_hour) / days;
     console.log(hours_per_day);
-    
 }
 
 calculateHoursPerDay(["212 ", "20 ", "2"]);

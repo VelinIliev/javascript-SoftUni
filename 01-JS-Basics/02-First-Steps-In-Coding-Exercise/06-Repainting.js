@@ -14,8 +14,6 @@ function main(input) {
     let price_per_hour = materials * .3;
     let final_sum = materials + price_per_hour * hours_needed
     console.log(final_sum);
-
-
 }
 
 main(["10", "11", "4", "8"]);
