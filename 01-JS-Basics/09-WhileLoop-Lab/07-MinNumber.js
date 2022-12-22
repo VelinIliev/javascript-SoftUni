@@ -16,6 +16,7 @@ function main(params) {
     }
     console.log(min_number);
 };
+
 main(["100", "99", "80", "70", "Stop"]);
 main(["-10", "20", "-30", "Stop"])
 main(["45", "-20", "7", "99", "Stop"])
