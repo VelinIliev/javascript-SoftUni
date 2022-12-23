@@ -2,6 +2,9 @@ function main(size) {
     let result = '<div class="chessboard">\n';
     let color = ['black', 'white'];
     let check = 0;
+    if (size % 2 == 0) {
+        check = 1;
+    }
     for (let i = 0; i < size; i++) {
         result += ` <div>\n`;
         for (let j = 0; j < size; j++) {
@@ -25,7 +28,7 @@ function main(size) {
     result += '</div>'
     console.log(result);
 }
-// TODO: not finished;
-// main(3);
+
+main(3);
 main(4);
 
