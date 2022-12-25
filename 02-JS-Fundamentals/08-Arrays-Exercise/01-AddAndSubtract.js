@@ -17,6 +17,6 @@ function main(array) {
     console.log(old_sum);
     console.log(new_sum);
 }
-// const map1 = array1.map(x => x * 2);
+
 main([5, 15, 23, 56, 35]);
 main([-5, 11, 3, 0, 2])
