@@ -8,7 +8,7 @@ function main(array) {
         } else if (array[i] === array[i - 1]) {
             sequences.push(array[i])
             // count++;
-        }
+        } 
         // console.log(sequences);
     }
     let count = {};
