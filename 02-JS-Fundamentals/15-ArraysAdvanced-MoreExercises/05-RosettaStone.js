@@ -44,29 +44,29 @@ function main(matrix) {
     }
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[0].length; j++) {
-            if (isNaN(matrix[i][j]) && matrix[i][j] !== " ") {
+            if ((/[a-zA-Z ]/).test(matrix[i][j])) {
                 continue;
             } else {
-                matrix[i][j] = find_letter(matrix[i][j] + template_matrix[0][0]);
-                if (i + 1 < matrix.length ){
-                    matrix[i + 1][j] = find_letter(matrix[i+1][j] + template_matrix[1][0]);
-                }
-                if (j + 1 < matrix[0].length) {
-                    console.log(matrix[i][j+1]+template_matrix[0][1]);
-                    matrix[i][j + 1] = find_letter(matrix[i][j+1] + template_matrix[0][1]);
-                    
-                    
-                }
-                if (i + 1 < matrix.length && j + 1 < matrix[0].length){
-                    matrix[i+1][j+1] = find_letter(matrix[i+1][j+1] + template_matrix[1][1]);
+                for (let l = 0; l < template_matrix.length; l++) {
+                    let check_row = i + l;
+                    for (let k = 0; k < template_matrix[0].length; k++) {
+                        let check_col = k + j;
+                        if (check_row >= 0 && check_row < matrix.length 
+                            && check_col >= 0 && check_col < matrix[0].length){
+                                matrix[i+l][j+k] = find_letter(matrix[i+l][j+k] + template_matrix[l][k])
+                        }
+                    }
                 }
             }
-            console.log(matrix);
         }
-        
     }
-    console.log(template_matrix);
-    console.log(matrix);
+    let final_message = "";
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[0].length; j++) {
+            final_message += matrix[i][j]
+        }
+    }
+    console.log(final_message);
 }
 
 main([ '2',
@@ -78,5 +78,22 @@ main([ '2',
 '2 17 13 19 20',
 '0 9 0 22 22' ]
 )
-
-// NOT READY
+main([ '2',
+'31 32',
+'74 37',
+'19 0 23 25',
+'22 3 12 17',
+'5 9 23 11',
+'12 18 10 22' ]
+)
+main(["1",
+    '1 3 13',
+    '12 22 14 13 25 0 4 24 23',
+    '18 24 2 25 22 0 0 11 18',
+    '8 25 6 26 8 23 13 4 14',
+    '14 3 14 10 6 1 6 16 14',
+    '11 12 2 10 24 2 13 24 0',
+    '24 24 10 14 15 25 18 24 12',
+    '4 24 0 8 4 22 19 22 14',
+    '0 11 18 26 1 19 18 13 15',
+    '8 15 14 26 24 14 26 24 14'])
