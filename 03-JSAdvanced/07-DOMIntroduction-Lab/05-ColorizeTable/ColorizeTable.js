@@ -6,6 +6,6 @@ function colorize() {
         if (i % 2 !== 0) {
             table.children[i].style.backgroundColor = 'teal';
         }
-        
+
     }
 }
