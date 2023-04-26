@@ -55,13 +55,11 @@ function solve() {
         e.preventDefault();
         let currentMovie = e.currentTarget.parentNode.parentNode;
         let ticketsSold = e.currentTarget.parentNode.querySelector('input');
-        // console.log(ticketsSold.value);
 
         if (ticketsSold.value && !isNaN(Number(ticketsSold.value))) {
 
             let profit = currentMovie.querySelector('strong')
             let price = currentMovie.querySelector("div strong").textContent;
-            // console.log(price);
         
             currentMovie.querySelector("div").remove();
 
